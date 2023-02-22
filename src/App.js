@@ -27,9 +27,12 @@ const App = () => {
         <ToastContainer />
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/add" element={<AddContact />} />
-          <Route path="/edit/:id" element={<EditContact />} />
+          <Route path="/contact-management-app" element={<Home />} />
+          <Route path="/contact-management-app/add" element={<AddContact />} />
+          <Route
+            path="/contact-management-app/edit/:id"
+            element={<EditContact />}
+          />
         </Routes>
       </Provider>
     </div>

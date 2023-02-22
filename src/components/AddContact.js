@@ -38,7 +38,7 @@ const AddContact = () => {
     );
 
     toast.success("New Contact Added Successfully");
-    navigate("/");
+    navigate("/contact-management-app");
   };
 
   return (

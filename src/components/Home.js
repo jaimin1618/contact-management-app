@@ -23,7 +23,7 @@ const Home = () => {
         <td>{contact.number}</td>
         <td>
           <Link
-            to={`/edit/${contact.id}`}
+            to={`/contact-management-app/edit/${contact.id}`}
             className="btn btn-small btn-primary m-1"
           >
             {<FaEdit />}
@@ -44,7 +44,7 @@ const Home = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-12 text-right my-5">
-          <Link to="/add" className="btn btn-success">
+          <Link to="/contact-management-app/add" className="btn btn-success">
             Add Contact
           </Link>
         </div>
