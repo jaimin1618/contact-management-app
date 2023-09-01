@@ -11,7 +11,11 @@ const Home = () => {
 
   const deleteContactItem = (id) => {
     dispatcher(ContactActions.removeContact(id));
-    toast.success("Contact Item Deleted Succcessfully");
+    toast.success("Contact Item Deleted Succcessfully", {
+      position: toast.POSITION.BOTTOM_CENTER,
+      hideProgressBar: true,
+      autoClose: 3000,
+    });
   };
 
   const renderContacts = () => {
@@ -23,7 +27,7 @@ const Home = () => {
         <td>{contact.number}</td>
         <td>
           <Link
-            to={`/contact-management-app/edit/${contact.id}`}
+            to={`/edit/${contact.id}`}
             className="btn btn-small btn-primary m-1"
           >
             {<FaEdit />}
@@ -44,7 +48,7 @@ const Home = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-12 text-right my-5">
-          <Link to="/contact-management-app/add" className="btn btn-success">
+          <Link to="/add" className="btn btn-success">
             Add Contact
           </Link>
         </div>

@@ -15,17 +15,35 @@ const AddContact = () => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     if (!name || !email || !number) {
-      return toast.warning("Kindly Fill All Form Fields");
+      toast.warn("Kindly Fill All Form Fields", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+
+      return;
     }
 
     const isEmailExists = contacts.find((c) => c.email === email);
     const isNumberExists = contacts.find((c) => c.number === parseInt(number));
 
     if (isEmailExists) {
-      return toast.error("Provided Email Address Already Exists");
+      toast.error("Provided Email Address Already Exists", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+
+      return;
     }
     if (isNumberExists) {
-      return toast.error("Provided Number Already Exists");
+      toast.error("Provided Number Already Exists", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+
+      return;
     }
 
     dispatcher(
@@ -37,8 +55,12 @@ const AddContact = () => {
       })
     );
 
-    toast.success("New Contact Added Successfully");
-    navigate("/contact-management-app");
+    toast.success("New Contact Added Successfully", {
+      position: toast.POSITION.BOTTOM_CENTER,
+      hideProgressBar: true,
+      autoClose: 3000,
+    });
+    navigate("/");
   };
 
   return (
