@@ -52,8 +52,17 @@ const Home = () => {
             Add Contact
           </Link>
         </div>
-        <div className="col-md-6 mx-auto">
-          <h1>Contact Management Application</h1>
+        <div className="col-md-8 mx-auto">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <h1 style={{ marginBottom: "20px" }}>
+              Contact Management Application
+            </h1>
+          </div>
           <table className="table table-hover">
             <thead className="text-white bg-dark text-center">
               <tr>
