@@ -1,7 +1,6 @@
-
 # React/Redux - Contact management app
 
-A client side contact management web-application project that focuses on implementing React state management using Redux.js toolkit. 
+A client side contact management web-application project that focuses on implementing React state management using Redux.js toolkit.
 
 ## Features
 
@@ -9,15 +8,13 @@ A client side contact management web-application project that focuses on impleme
 - Delete contact
 - Update contact details
 
-
 ## Tech Stack
 
 **Client side:** React, Redux, bootstrap 5
 
 ## Screenshots
 
-![App Screenshot](screenshot.jpg)
-
+![App Screenshot](screenshot.png)
 
 ## Installation
 
@@ -45,13 +42,10 @@ Start the application
   npm run start
 ```
 
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
 ## Authors
 
 - [Jaimin Chokhawala](https://github.com/jaimin1618)
-
