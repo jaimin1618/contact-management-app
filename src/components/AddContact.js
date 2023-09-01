@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { ContactActions } from "../store/ContactSlice";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const AddContact = () => {
   const [name, setName] = useState("");
@@ -48,7 +49,7 @@ const AddContact = () => {
 
     dispatcher(
       ContactActions.addContact({
-        id: contacts[contacts.length - 1].id + 1,
+        id: uuidv4(),
         name,
         email,
         number,

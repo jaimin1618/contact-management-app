@@ -10,8 +10,11 @@ const EditContact = () => {
   const [number, setNumber] = useState("");
 
   const { id } = useParams();
+  console.log(id);
   const contacts = useSelector((state) => state.Contact);
-  const contact = contacts.find((c) => c.id === parseInt(id));
+  console.log(contacts);
+
+  const contact = contacts.find((c) => c.id === id);
 
   useEffect(() => {
     if (contact) {
@@ -84,7 +87,7 @@ const EditContact = () => {
       {contact ? (
         <div className="row">
           <h1 className="display-3 text-center mt-5">
-            Editing Contact ID {id}
+            Editing Contact ID {contact.name}
           </h1>
           <div className="col-md-6 shadow mx-auto p-5 m-5">
             <form onSubmit={formSubmitHandler}>

@@ -19,29 +19,42 @@ const Home = () => {
   };
 
   const renderContacts = () => {
-    return contacts.map((contact) => (
-      <tr key={contact.id}>
-        <td>{contact.id + 1}</td>
-        <td>{contact.name}</td>
-        <td>{contact.email}</td>
-        <td>{contact.number}</td>
-        <td>
-          <Link
-            to={`/edit/${contact.id}`}
-            className="btn btn-small btn-primary m-1"
-          >
-            {<FaEdit />}
-          </Link>
-          <button
-            className="btn btn-small btn-danger m-1"
-            type="button"
-            onClick={() => deleteContactItem(contact.id)}
-          >
-            {<FaArchive />}
-          </button>
-        </td>
-      </tr>
-    ));
+    if (contacts && contacts.length == 0) {
+      return (
+        <tr className="">
+          <td className="alert alert-warning" colSpan={5}>
+            No contacts found
+          </td>
+        </tr>
+      );
+    }
+
+    return (
+      contacts &&
+      contacts.map((contact, idx) => (
+        <tr key={contact.id}>
+          <td>{idx + 1}</td>
+          <td>{contact.name}</td>
+          <td>{contact.email}</td>
+          <td>{contact.number}</td>
+          <td>
+            <Link
+              to={`/edit/${contact.id}`}
+              className="btn btn-small btn-primary m-1"
+            >
+              {<FaEdit />}
+            </Link>
+            <button
+              className="btn btn-small btn-danger m-1"
+              type="button"
+              onClick={() => deleteContactItem(contact.id)}
+            >
+              {<FaArchive />}
+            </button>
+          </td>
+        </tr>
+      ))
+    );
   };
 
   return (
