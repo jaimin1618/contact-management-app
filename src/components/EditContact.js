@@ -40,10 +40,10 @@ const EditContact = () => {
     }
 
     const isEmailExists = contacts.find(
-      (c) => c.email === email && c.id !== parseInt(id)
+      (c) => c.email === email && c.id !== id
     );
     const isNumberExists = contacts.find(
-      (c) => c.number === number && c.id !== parseInt(id)
+      (c) => c.number === number && c.id !== id
     );
 
     if (isEmailExists) {
